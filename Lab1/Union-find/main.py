@@ -4,9 +4,9 @@ from collections import defaultdict
 sets = []
 
 def root(a):
-    while (sets[a] != a and sets[a]!=-1):
-        a = sets[a]
-    return a
+    if sets[a] != a:
+        sets[a] = root(sets[a])
+    return sets[a]
 
 def merge(a, b):
     # in_a = sets[a]
@@ -31,7 +31,7 @@ if __name__ == '__main__':
     line = i.split()
     N = int(line[0])
     Q = int(line[1])
-    sets = [-1]*N
+    sets = [x for x in range(N)]
     for i in range(Q):
         line = input().split()
         op = line[0]
