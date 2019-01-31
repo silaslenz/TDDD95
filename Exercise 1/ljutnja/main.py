@@ -25,3 +25,4 @@ if __name__ == '__main__':
     # print("Got:", M, "Need:", sum(children))
     children.sort()
     print(solve(M, N, children))
+
